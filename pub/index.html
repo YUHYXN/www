@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>뉴오토정밀</title>
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/layout.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/main.css">
     <script src="./js/jquery.3.1.1.js"></script>
+    <script src="./js/swiper-bundle.min.js"></script>
     <script src="./js/ui.js"></script>
 </head>
 <body>
@@ -164,8 +166,113 @@
             </div>
         </header>
         <div class="contents">
-            <div>
+            <div class="inner">
+                <!-- main visual -->
+                <section class="main_visual">
+                    <div class="visual_banner main_swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide slide_item">
+                                <div class="slide_inner">
+                                    <img src="./images/img_banner_01.png" alt="">
+                                    <div class="txt_box">
+                                        <strong class="visual_tit">사람 중심의 경영으로 고객과 행복 추구</strong>
+                                        <p class="visual_desc">
+                                            <span>뉴오토정밀은 미래의 더 나은 삶을 위한</span>
+                                            <span>사람 중심의 경영으로 고객과 함께 행복을 추구하는 기업으로 성장하고 있습니다.</span>
+                                        </p>
+                                    </div>          
+                                </div>
+                            </div>
+                            <div class="swiper-slide slide_item">
+                                <div class= "slide_inner">
+                                    <img src="./images/img_banner_02.png" alt="">
+                                    <div class="txt_box">
+                                        <strong class="visual_tit">끊임없는 도전과 열정으로 경쟁력 있는 신기술 개발</strong>
+                                        <p class="visual_desc">
+                                            <span>뉴오토정밀은 빠르게 변화하는 시장에 신속한 대응을 위하여 도전정신을 바탕으로 경쟁력 있는</span>
+                                            <span>신기술 개발에 끊임없이 노력하고 있습니다.</span>
+                                        </p>
+                                    </div>          
+                                </div>
+                            </div>
+                            <div class="swiper-slide slide_item">
+                                <div class= "slide_inner">
+                                    <img src="./images/img_banner_03.png" alt="">
+                                    <div class="txt_box">
+                                        <strong class="visual_tit">미래 환경을 위한 친환경 솔루션 구축</strong>
+                                        <p class="visual_desc">
+                                            <span>뉴오토정밀은 지속 가능한 미래를 위하여 친환경적인 솔루션 개발과 미래 환경에 힘쓰고 있습니다.</span>
+                                        </p>
+                                    </div>          
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="custom-bar-wrap">
+                            <div class="custom-bar-progress"></div>
+                            <button type="button" class="autoplay-toggle-btn pause">
+                                <span class="blind">자동 재생 일시 정지</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <h2>
+                            끊임없는 변화와 혁신으로<br>
+                            고객과 함께 성장하는 뉴오토정밀이 되겠습니다.
+                        </h2>
+                        <a href="#none">뉴오토정밀 더 알아보기</a>
+                        <div>
+                            <img src="" alt="">
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <h2>
+                            <span>뉴오토정밀은</span> 전문가와
+                            고품질 소재로 당사의 모든 제품을 제조합니다.
+                        </h2>
+                    </div>
+                    <div>
+                        <div>
+                            <div class="swiper-slide">
+                                <a href="">
+                                    <p>워터펌프</p>
+                                    <div class="img_prod">
+                                        <img src="./images/img_product_01.png" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <h2>
+                            <span>뉴오토정밀은</span> 전문가와
+                            고품질 소재로 당사의 모든 제품을 제조합니다.
+                        </h2>
 
+                    </div>
+                    <div>
+                        
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <div>
+                            <h3>E-카탈로그</h3>
+                            <button type="button">E-카탈로그 다운로드</button>
+                        </div>
+                        <div>
+                            <h3>연구개발</h3>
+                            <a href="">연구개발 더 알아보기</a>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
         <footer class="footer">
@@ -204,4 +311,82 @@
         </footer>
     </div>
 </body>
+
+<script>
+    $(document).ready(function() {
+        const $swiperContainer = $('.main_swiper');
+        const $barWrapContainer = $swiperContainer.find('.custom-bar-wrap'); 
+        const $progressContainer = $barWrapContainer.find('.custom-bar-progress'); 
+        const $autoplayToggleBtn = $barWrapContainer.find('.autoplay-toggle-btn');
+        
+        const barGap = 12;
+
+        const totalSlides = $swiperContainer.find('.swiper-wrapper .swiper-slide.slide_item').length;
+        
+        let progressHtml = '<div class="progress_wrap">';
+        for (let i = 0; i < totalSlides; i++) {
+            progressHtml += `<div class="progress_item" data-index="${i}"><span class="progress_bar"></span></div>`;
+        }
+        progressHtml += '</div>';
+        
+        $progressContainer.html(progressHtml);
+
+        document.documentElement.style.setProperty('--swiper-total-slides', totalSlides);
+        document.documentElement.style.setProperty('--bar-gap-px', barGap + 'px');
+        
+        const $progressBars = $progressContainer.find('.progress_bar');
+        
+        var mainSwiper = new Swiper(".main_swiper", {
+            slidesPerView: 1, 
+            speed: 800,
+            loop: true, 
+            autoplay: {
+                delay: 3000, 
+                disableOnInteraction: false
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
+            },
+            
+            on: {
+                autoplayTimeLeft(swiper, time, progress) {
+                    const fillRatio = 1 - progress; 
+                    const currentRealIndex = swiper.realIndex;
+
+                    const $currentBar = $progressBars.eq(currentRealIndex);
+                    
+                    $currentBar.css('transition', 'width 100ms linear'); 
+                    $currentBar.css('width', `${fillRatio * 100}%`); 
+
+                    $progressBars.not($currentBar).css({ 'transition': 'none', 'width': '0%' });
+                },
+            }
+        });
+
+        $autoplayToggleBtn.on('click', function() {
+            const $this = $(this);
+            
+            if ($this.hasClass('pause')) {
+                // 현재 Pause 상태 (재생 중) -> 정지
+                mainSwiper.autoplay.stop();
+                $this.removeClass('pause').addClass('play');
+                $this.find('.blind').text('자동 재생 시작');
+                
+                $progressBars.css('transition', 'none'); 
+
+            } else {
+                // 현재 Play 상태 (정지 중) -> 재생 시작
+                mainSwiper.autoplay.start();
+                $this.removeClass('play').addClass('pause');
+                $this.find('.blind').text('자동 재생 일시 정지');
+            }
+        });
+
+        $progressContainer.on('click', '.progress_item', function() {
+            const index = $(this).data('index');
+            mainSwiper.slideToLoop(index); 
+        });
+    });
+</script>
 </html>
