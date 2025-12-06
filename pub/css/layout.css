@@ -8,8 +8,8 @@ header{position:fixed;top:0;left:0;width:100%;height:80px;z-index:10;background-
 header.active .header_area{background:var(--white);padding:0 120px 64px;}
 header.active .header_area .depth2{display:block;}
 
-.header_area{position:relative;max-width:1920px;padding:0 120px;box-sizing:border-box;margin:0 auto;}
-.header_area::after{content:"";display:block;position:absolute; bottom:0;left:0; width:100%; height:1px;border-bottom:1px solid #E2E2E2;}
+.header_area{position:relative;padding:0 120px;box-sizing:border-box;margin:0 auto;}
+.header_area::after{content:"";display:block;position:absolute;top:79px;bottom:0;left:0; width:100%; height:1px;border-bottom:1px solid #E2E2E2;}
 .header_area .inner{display:flex;justify-content:space-between;}
 .header_area .logo{display:flex;align-items:center; height:80px;}
 .header_area .logo a{display:block;width:120px;height:48px;}
@@ -69,6 +69,7 @@ header .lnb_wrap.open{display:block;}
 ----------------------------------- */
 @media (min-width:768px) and (max-width:1228px) {
     header{height:auto}
+    .header_area::after{top:63px}
     .header_area{padding:16px 38px;}
     .header_area .logo{height:auto;}
     .header_area .logo a{width:80px;height:32px;}
@@ -116,6 +117,7 @@ header .lnb_wrap.open{display:block;}
 ----------------------------------- */
 @media (max-width:767px) {
     header{height: 56px;}
+    .header_area::after{top:55px}
     .header_area{padding:12px 24px;}
     .header_area .logo{height:auto;}
     .header_area .logo a{width:70px;height:28px;}
