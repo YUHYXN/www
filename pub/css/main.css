@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 .main_wrap .contents{padding: 0;}
-.main_wrap .contents > .inner{margin:0 auto;box-sizing:border-box;}
+.main_wrap .contents > .main_con_wrap{margin:0 auto;box-sizing:border-box;}
 /* 메인배너 */
 .visual_banner{position:relative;width:100%; overflow:hidden;}
 .visual_banner .slide_item{width: 100%;height: 980px;}
