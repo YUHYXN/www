@@ -20,6 +20,13 @@ time, mark, audio, video {
 	vertical-align: baseline;
   text-decoration: none;
 }
+
+body {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+/* --------------------
+  // 임시 웹폰트 호출
+  -------------------- */
 button {
     background: none;
     border: none;
@@ -44,6 +51,10 @@ blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
+}
+a{
+	color: inherit;
+	text-decoration: none;
 }
 table {
 	border-collapse: collapse;
