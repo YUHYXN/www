@@ -79,70 +79,77 @@ $(function(){
         $(this).parent().toggleClass("active");
     });
 
-    $(document).ready(function () {
 
-        $(".product_tab_btn").on("click", function () {
+    // 제품소개 탭 버튼
+    $(".inner_tab_btn").on("click", function () {
 
-            // 탭 버튼(li)의 is-active 처리
-            $(".product_tab_item").removeClass("is-active");
-            $(this).closest(".product_tab_item").addClass("is-active");
+        // 탭 버튼(li)의 is-active 처리
+        $(".inner_tab_item").removeClass("is-active");
+        $(this).closest(".inner_tab_item").addClass("is-active");
 
-            // 탭 패널 전환
-            const target = $(this).data("target");
+        // 탭 패널 전환
+        const target = $(this).data("target");
 
-            $(".product_tab_panel").removeClass("is-active");
-            $("#" + target).addClass("is-active");
-
-        });
-
-        //
-        // ./js/products.js
-
-        $(function () {
-
-            /* 탭 버튼 활성화 */
-            $(".product_tab_btn").on("click", function () {
-                // li 활성화
-                $(".product_tab_item").removeClass("is-active");
-                $(this).closest(".product_tab_item").addClass("is-active");
-
-                // 패널 전환
-                let target = $(this).data("target"); // 예: "tab-waterpump"
-                $(".product_tab_panel").removeClass("is-active");
-                $("#" + target).addClass("is-active");
-            });
-
-            /* 썸네일 스와이퍼 (워터펌프 모델들) */
-            let thumbSwiper = new Swiper(".product_thumb_swiper", {
-                loop: true,
-                spaceBetween: 8,
-                slidesPerView: 5,
-                freeMode: true,
-                watchSlidesProgress: true,
-                breakpoints: {
-                    1229: { slidesPerView: 6 },
-                    768:  { slidesPerView: 5 },
-                    480:  { slidesPerView: 4 },
-                    0:    { slidesPerView: 3 }
-                }
-            });
-
-            /* 메인 카드 스와이퍼 (워터펌프 모델들 상세) */
-            let mainSwiper = new Swiper(".product_main_swiper", {
-                loop: true,
-                spaceBetween: 0,
-                navigation: {
-                    nextEl: ".product_main_next",
-                    prevEl: ".product_main_prev"
-                },
-                thumbs: {
-                    swiper: thumbSwiper
-                }
-            });
-
-        });
+        $(".inner_tab_panel").removeClass("is-active");
+        $("#" + target).addClass("is-active");
 
     });
+
+    // 제품소개 스와이퍼 부분
+    const $thumbEl = document.querySelector('.product_thumb_swiper');
+    const $mainEl  = document.querySelector('.product_main_swiper');
+
+    // 제품 상세 페이지에서만 실행되도록 방어코드
+    if ($thumbEl && $mainEl) {
+
+        /* 썸네일 스와이퍼 (워터펌프 모델들) */
+        const thumbSwiper = new Swiper(".product_thumb_swiper", {
+            slidesPerView: 'auto',
+            spaceBetween: 12,
+            breakpoints: {
+                0: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 16,
+                },
+                1228: {
+                    slidesPerView: 2,
+                    spaceBetween: 12,
+                },
+            },
+        });
+
+        /* 메인 카드 스와이퍼 (워터펌프 모델들 상세) */
+        const mainSwiper = new Swiper(".product_main_swiper", {
+            effect: "fade",
+            fadeEffect: {
+                crossFade: true
+            },
+            speed: 200,
+            spaceBetween: 0,
+            navigation: {
+                nextEl: ".product_main_next",
+                prevEl: ".product_main_prev"
+            },
+            thumbs: {
+                swiper: thumbSwiper,
+            },
+            on: {
+                // 최초 로딩 시에도 썸네일 위치 맞춰주기
+                init(swiper) {
+                    const idx = swiper.realIndex;
+                    thumbSwiper.slideTo(idx);
+                },
+                // 메인 슬라이드가 바뀔 때마다 썸네일도 같은 인덱스로 이동
+                slideChange(swiper) {
+                    const idx = swiper.realIndex;
+                    thumbSwiper.slideTo(idx);
+                }
+            }
+        });
+    }
 
     //modal
     // modal_practice 내 닫기 버튼 클릭 시 모달 닫기
@@ -150,47 +157,10 @@ $(function(){
         $(".modal_overlay").hide();
         $(".modal_practice").removeClass("open").hide();
     });
-
-    // product_intro
-    /* 탭 버튼 활성화 */
-    $(".product_tab_btn").on("click", function () {
-        // li 활성화
-        $(".product_tab_item").removeClass("is-active");
-        $(this).closest(".product_tab_item").addClass("is-active");
-
-        // 패널 전환
-        let target = $(this).data("target"); // 예: "tab-waterpump"
-        $(".product_tab_panel").removeClass("is-active");
-        $("#" + target).addClass("is-active");
-    });
-
-    // 제품소개 스와이프 페이지 스크립트
-    /* 썸네일 스와이퍼 (워터펌프 모델들) */
-    let thumbSwiper = new Swiper(".product_thumb_swiper", {
-        loop: true,
-        spaceBetween: 8,
-        slidesPerView: 5,
-        freeMode: true,
-        watchSlidesProgress: true,
-        breakpoints: {
-            1229: { slidesPerView: 6 },
-            768:  { slidesPerView: 5 },
-            480:  { slidesPerView: 4 },
-            0:    { slidesPerView: 3 }
-        }
-    });
-
-    /* 메인 카드 스와이퍼 (워터펌프 모델들 상세) */
-    let mainSwiper = new Swiper(".product_main_swiper", {
-        loop: true,
-        spaceBetween: 0,
-        navigation: {
-            nextEl: ".product_main_next",
-            prevEl: ".product_main_prev"
-        },
-        thumbs: {
-            swiper: thumbSwiper
-        }
+    
+    // inner tab list 터치무
+    $('.inner_tab_list').on('touchmove', function (e) {
+        e.stopPropagation(); 
     });
 
 });
