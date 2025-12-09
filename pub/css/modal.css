@@ -4,16 +4,6 @@
 @import url(./reset.css);
 @import url(./common.css);
 
-/* Font-size variable 설정 */
-:root{
-  --font48:48px;
-  --font36:36px;
-  --font32:32px;
-  --font24:24px;
-  --font18:18px;
-  --font16:16px;
-  --font14:14px;
-}
 
 /* --------------------
     Modal Practice
