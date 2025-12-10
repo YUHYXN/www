@@ -140,8 +140,8 @@
 
 
     /*  제품소개 및 홍보센터 등 비주얼 메인  */
-    .contents .inner_visual{margin: 36px 38px 0;}
-    .inner_visual .visual_tit{font-size: var(--font32);}
+    .contents .visual_box{margin: 36px 38px 0;}
+    .visual_box .visual_tit{font-size: var(--font32);}
     .contents .visual_inner{height: 226px; padding: 0;}
     .inner_content .section_inner{margin: 0 38px 0;}
     .inner_content .content_tab_box{margin-top: 16px;}
@@ -182,7 +182,7 @@
 
     /*  공통 영역 탭 > 브레드크럼 > 서치   */
     .contents .visual_inner{height: 136px; padding: 0;}
-    .contents .inner_visual{margin: 24px 24px 0;}
+    .contents .visual_box{margin: 24px 24px 0;}
     .visual_inner .visual_tit{font-size: var(--font18);line-height: 22px;}
     .inner_content .section_inner{margin: 0 24px 0;}
     .inner_content .inner_tab {width: 100%;overflow-x: auto;overflow-y: hidden;}
