@@ -14,7 +14,7 @@
     <script src="./js/ui.js"></script>
 </head>
 <body>
-<div class="wrap product_intro">
+<div class="wrap">
     <!--   헤더   -->
     <header>
         <div class="header_area">
@@ -178,70 +178,71 @@
 
     <!--  컨텐츠  -->
     <div class="contents products_wrap">
-        <div class="inner">
-            <!--  백그라운드 비주얼  -->
-            <section class="inner_visual">
+        <!--  백그라운드 비주얼  -->
+        <section class="inner_visual">
+            <div class="visual_inner">
                 <h2 class="visual_tit">제품소개</h2>
-            </section>
-            <section class="inner_content">
-                <!--  메뉴박스  -->
-                <div class="content_tab_box">
-                    <!--  홈메뉴 & 현재 페이지 네임  -->
-                    <div class="breadcrumb">
-                        <a href="javascript:void(0);" class="guide_home_link">
-                            <i class="guide_home"></i>
-                        </a>
-                        <span class="breadcrumb_current">제품소개</span>
-                    </div>
-                    <div class="inner_tab">
-                        <!-- 제품 카테고리 탭 (워터펌프 / 오일펌프 …) -->
-                        <ul class="inner_tab_list" role="tablist">
-                            <li class="inner_tab_item is-active">
-                                <button type="button" class="inner_tab_btn"
-                                        data-target="tab-waterpump" role="tab" aria-selected="true">
-                                    <span>워터펌프</span>
-                                </button>
-                            </li>
-                            <li class="inner_tab_item">
-                                <button type="button" class="inner_tab_btn"
-                                        data-target="tab-oilpump" role="tab" aria-selected="false">
-                                    <span>오일펌프</span>
-                                </button>
-                            </li>
-                            <li class="inner_tab_item">
-                                <button type="button" class="inner_tab_btn"
-                                        data-target="tab-thermostat" role="tab"
-                                        aria-selected="false">
-                                    <span>써모스탯</span>
-                                </button>
-                            </li>
-                            <li class="inner_tab_item">
-                                <button type="button" class="inner_tab_btn"
-                                        data-target="tab-tensioner" role="tab"
-                                        aria-selected="false">
-                                    <span>텐셔너</span>
-                                </button>
-                            </li>
-                            <li class="inner_tab_item">
-                                <button type="button" class="inner_tab_btn"
-                                        data-target="tab-idler" role="tab" aria-selected="false">
-                                    <span>아이들러</span>
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="content_search_box">
-                    <form class="inner_search_form" action="" method="get">
-                        <label for="innerKeyword" class="blind">제품 검색</label>
-                        <input id="innerKeyword" name="keyword" type="text"
-                               class="inner_search_input" placeholder="찾는 제품명을 입력해 주세요.">
-                        <button type="submit" class="inner_search_btn">검색</button>
-                    </form>
-                </div>
-            </section>
-
-        </div>
+            </div>
+        </section>
+        <section class="inner_content">
+           <div class="section_inner">
+               <!--  메뉴박스  -->
+               <div class="content_tab_box">
+                   <!--  홈메뉴 & 현재 페이지 네임  -->
+                   <div class="breadcrumb">
+                       <a href="javascript:void(0);" class="guide_home_link">
+                           <i class="guide_home"></i>
+                       </a>
+                       <span class="breadcrumb_current">제품소개</span>
+                   </div>
+                   <div class="inner_tab">
+                       <!-- 제품 카테고리 탭 (워터펌프 / 오일펌프 …) -->
+                       <ul class="inner_tab_list" role="tablist">
+                           <li class="inner_tab_item is-active">
+                               <button type="button" class="inner_tab_btn"
+                                       data-target="tab-waterpump" role="tab" aria-selected="true">
+                                   <span>워터펌프</span>
+                               </button>
+                           </li>
+                           <li class="inner_tab_item">
+                               <button type="button" class="inner_tab_btn"
+                                       data-target="tab-oilpump" role="tab" aria-selected="false">
+                                   <span>오일펌프</span>
+                               </button>
+                           </li>
+                           <li class="inner_tab_item">
+                               <button type="button" class="inner_tab_btn"
+                                       data-target="tab-thermostat" role="tab"
+                                       aria-selected="false">
+                                   <span>써모스탯</span>
+                               </button>
+                           </li>
+                           <li class="inner_tab_item">
+                               <button type="button" class="inner_tab_btn"
+                                       data-target="tab-tensioner" role="tab"
+                                       aria-selected="false">
+                                   <span>텐셔너</span>
+                               </button>
+                           </li>
+                           <li class="inner_tab_item">
+                               <button type="button" class="inner_tab_btn"
+                                       data-target="tab-idler" role="tab" aria-selected="false">
+                                   <span>아이들러</span>
+                               </button>
+                           </li>
+                       </ul>
+                   </div>
+               </div>
+               <div class="content_search_box">
+                   <form class="inner_search_form" action="" method="get">
+                       <label for="innerKeyword" class="blind">제품 검색</label>
+                       <input id="innerKeyword" name="keyword" type="text"
+                              class="inner_search_input" placeholder="찾는 제품명을 입력해 주세요.">
+                       <button type="submit" class="inner_search_btn">검색</button>
+                   </form>
+               </div>
+           </div>
+        </section>
         <!-- 탭별 컨텐츠 -->
         <main class="product_tab_panels">
             <section id="tab-waterpump" class="inner_tab_panel is-active">
@@ -250,7 +251,8 @@
                     <div class="product_tab_result">
                         <strong>워터펌프</strong>
                         <p class="result_text">
-                            실린더 블록 물 재킷 부위에 볼트로 체결되며, 벨트 또는 기어에 의해 크랭크축의 구동력을 전달받아 냉각수를 순환시켜 엔진에서 발생하는 열을 감소시키는 제품입니다.
+                            실린더 블록 물 재킷 부위에 볼트로 체결되며, 벨트 또는 기어에 의해 크랭크축의 구동력을 전달받아 냉각수를 순환시켜 엔진에서 발생하는
+                            열을 감소시키는 제품입니다.
                         </p>
                     </div>
                 </div>
@@ -586,7 +588,8 @@
                                     <div class="swiper-slide">
                                         <button type="button" class="product_thumb_item">
                                                 <span class="product_thumb_img">
-                                                  <img src="./images/product/product_waterpump.png" alt="Auto Water Pump 썸네일 1">
+                                                  <img src="./images/product/product_waterpump.png"
+                                                       alt="Auto Water Pump 썸네일 1">
                                                 </span>
                                             <span class="product_thumb_name">Auto Water Pump Auto Water Pump AutoAutoAutoAutoAutoAutoAutoAuto</span>
                                         </button>
@@ -596,7 +599,8 @@
                                     <div class="swiper-slide">
                                         <button type="button" class="product_thumb_item">
                                                 <span class="product_thumb_img">
-                                                  <img src="./images/product/product_waterpump.png" alt="Auto Water Pump 썸네일 2">
+                                                  <img src="./images/product/product_waterpump.png"
+                                                       alt="Auto Water Pump 썸네일 2">
                                                 </span>
                                             <span class="product_thumb_name">Auto Water Pump KIA Water Pump Auto</span>
                                         </button>
@@ -606,7 +610,8 @@
                                     <div class="swiper-slide">
                                         <button type="button" class="product_thumb_item">
                                                 <span class="product_thumb_img">
-                                                  <img src="./images/product/product_waterpump.png" alt="Auto Water Pump 썸네일 3">
+                                                  <img src="./images/product/product_waterpump.png"
+                                                       alt="Auto Water Pump 썸네일 3">
                                                 </span>
                                             <span class="product_thumb_name">Auto Water Pump Premium Water Pump Auto</span>
                                         </button>
@@ -616,7 +621,8 @@
                                     <div class="swiper-slide">
                                         <button type="button" class="product_thumb_item">
                                                 <span class="product_thumb_img">
-                                                  <img src="./images/product/product_waterpump.png" alt="Auto Water Pump 썸네일 4">
+                                                  <img src="./images/product/product_waterpump.png"
+                                                       alt="Auto Water Pump 썸네일 4">
                                                 </span>
                                             <span class="product_thumb_name">Auto Water Pump Premium Water Pump Auto</span>
                                         </button>
@@ -626,7 +632,8 @@
                                     <div class="swiper-slide">
                                         <button type="button" class="product_thumb_item">
                                                 <span class="product_thumb_img">
-                                                  <img src="./images/product/product_waterpump.png" alt="Auto Water Pump 썸네일 5">
+                                                  <img src="./images/product/product_waterpump.png"
+                                                       alt="Auto Water Pump 썸네일 5">
                                                 </span>
                                             <span class="product_thumb_name">Auto Water Pump Premium Water Pump Auto</span>
                                         </button>
@@ -636,7 +643,8 @@
                                     <div class="swiper-slide">
                                         <button type="button" class="product_thumb_item">
                                                 <span class="product_thumb_img">
-                                                  <img src="./images/product/product_waterpump.png" alt="Auto Water Pump 썸네일 6">
+                                                  <img src="./images/product/product_waterpump.png"
+                                                       alt="Auto Water Pump 썸네일 6">
                                                 </span>
                                             <span class="product_thumb_name">Auto Water Pump Premium Water Pump Auto</span>
                                         </button>
@@ -646,7 +654,8 @@
                                     <div class="swiper-slide">
                                         <button type="button" class="product_thumb_item">
                                                 <span class="product_thumb_img">
-                                                  <img src="./images/product/product_waterpump.png" alt="Auto Water Pump 썸네일 7">
+                                                  <img src="./images/product/product_waterpump.png"
+                                                       alt="Auto Water Pump 썸네일 7">
                                                 </span>
                                             <span class="product_thumb_name">Auto Water Pump Premium Water Pump Auto</span>
                                         </button>
@@ -656,7 +665,8 @@
                                     <div class="swiper-slide">
                                         <button type="button" class="product_thumb_item">
                                                 <span class="product_thumb_img">
-                                                  <img src="./images/product/product_waterpump.png" alt="Auto Water Pump 썸네일 8">
+                                                  <img src="./images/product/product_waterpump.png"
+                                                       alt="Auto Water Pump 썸네일 8">
                                                 </span>
                                             <span class="product_thumb_name">Auto Water Pump Premium Water Pump Auto</span>
                                         </button>
@@ -676,7 +686,8 @@
                     <div class="product_tab_result">
                         <strong>오일펌프</strong>
                         <p class="result_text">
-                            실린더 블록 물 재킷 부위에 볼트로 체결되며, 벨트 또는 기어에 의해 크랭크축의 구동력을 전달받아 냉각수를 순환시켜 엔진에서 발생하는 열을 감소시키는 제품입니다.
+                            실린더 블록 물 재킷 부위에 볼트로 체결되며, 벨트 또는 기어에 의해 크랭크축의 구동력을 전달받아 냉각수를 순환시켜 엔진에서 발생하는
+                            열을 감소시키는 제품입니다.
                         </p>
                     </div>
                 </div>
@@ -688,7 +699,8 @@
                     <div class="product_tab_result">
                         <strong>써모스탯</strong>
                         <p class="result_text">
-                            실린더 블록 물 재킷 부위에 볼트로 체결되며, 벨트 또는 기어에 의해 크랭크축의 구동력을 전달받아 냉각수를 순환시켜 엔진에서 발생하는 열을 감소시키는 제품입니다.
+                            실린더 블록 물 재킷 부위에 볼트로 체결되며, 벨트 또는 기어에 의해 크랭크축의 구동력을 전달받아 냉각수를 순환시켜 엔진에서 발생하는
+                            열을 감소시키는 제품입니다.
                         </p>
                     </div>
                 </div>
@@ -700,7 +712,8 @@
                     <div class="product_tab_result">
                         <strong>텐셔너</strong>
                         <p class="result_text">
-                            실린더 블록 물 재킷 부위에 볼트로 체결되며, 벨트 또는 기어에 의해 크랭크축의 구동력을 전달받아 냉각수를 순환시켜 엔진에서 발생하는 열을 감소시키는 제품입니다.
+                            실린더 블록 물 재킷 부위에 볼트로 체결되며, 벨트 또는 기어에 의해 크랭크축의 구동력을 전달받아 냉각수를 순환시켜 엔진에서 발생하는
+                            열을 감소시키는 제품입니다.
                         </p>
                     </div>
                 </div>
@@ -712,7 +725,8 @@
                     <div class="product_tab_result">
                         <strong>아이들러</strong>
                         <p class="result_text">
-                            실린더 블록 물 재킷 부위에 볼트로 체결되며, 벨트 또는 기어에 의해 크랭크축의 구동력을 전달받아 냉각수를 순환시켜 엔진에서 발생하는 열을 감소시키는 제품입니다.
+                            실린더 블록 물 재킷 부위에 볼트로 체결되며, 벨트 또는 기어에 의해 크랭크축의 구동력을 전달받아 냉각수를 순환시켜 엔진에서 발생하는
+                            열을 감소시키는 제품입니다.
                         </p>
                     </div>
                 </div>
@@ -720,48 +734,50 @@
         </main>
     </div>
 
-    <!--   푸터   -->
-    <footer class="footer">
-        <div class="footer_inner">
-            <div class="footer_top">
-                <p class="footer_company">
-                    뉴오토정밀(주)<br>
-                    NewAuto Precision Co., Ltd.
-                </p>
-                <nav class="footer_nav">
-                    <ul>
-                        <li><a href="#">회사소개</a></li>
-                        <li><a href="#">제품소개</a></li>
-                        <li><a href="#">연구개발</a></li>
-                        <li><a href="#">홍보센터</a></li>
-                        <li><a href="#">고객지원</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="footer_detail">
-                <div class="info_row">
-                    <span>대표 : 문학노</span>
-                    <span>주소 : 경기도 화성시 안녕남로 97-21</span>
-                </div>
-                <div class="info_row">
-                    <span>TEL : 031-224-6771</span>
-                    <span>FAX : 031-224-6772</span>
-                    <span>E-MAIL : newauto@newautokorea.com</span>
-                </div>
-            </div>
+</div>
 
-            <p class="footer_copy">
-                © 2024 NEWAUTO PRECISION. ALL RIGHTS RESERVED.
+<!--   푸터   -->
+<footer class="footer">
+    <div class="footer_inner">
+        <div class="footer_top">
+            <p class="footer_company">
+                뉴오토정밀(주)<br>
+                NewAuto Precision Co., Ltd.
             </p>
+            <nav class="footer_nav">
+                <ul>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">제품소개</a></li>
+                    <li><a href="#">연구개발</a></li>
+                    <li><a href="#">홍보센터</a></li>
+                    <li><a href="#">고객지원</a></li>
+                </ul>
+            </nav>
         </div>
-    </footer>
+        <div class="footer_detail">
+            <div class="info_row">
+                <span>대표 : 문학노</span>
+                <span>주소 : 경기도 화성시 안녕남로 97-21</span>
+            </div>
+            <div class="info_row">
+                <span>TEL : 031-224-6771</span>
+                <span>FAX : 031-224-6772</span>
+                <span>E-MAIL : newauto@newautokorea.com</span>
+            </div>
+        </div>
+
+        <p class="footer_copy">
+            © 2024 NEWAUTO PRECISION. ALL RIGHTS RESERVED.
+        </p>
+    </div>
+</footer>
 
 </div>
 </body>
 <script>
   // 제품소개 스와이퍼 부분
   const $thumbEl = document.querySelector('.product_thumb_swiper');
-  const $mainEl  = document.querySelector('.product_main_swiper');
+  const $mainEl = document.querySelector('.product_main_swiper');
 
   // 제품 상세 페이지에서만 실행되도록 방어코드
   if ($thumbEl && $mainEl) {
