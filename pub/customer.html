@@ -905,6 +905,7 @@
 })();
 
 
+  // 개인정보 모달 창 오픈
   (function ($) {
   function openModal($overlay) {
     if (!$overlay || !$overlay.length) return;
@@ -928,7 +929,7 @@
   openModal($overlay);
 });
 
-  // 닫기(닫기 버튼)
+  // 닫기(X 버튼)
   $(document).on('click', '.modal_overlay .modal_close', function () {
   closeModal($(this).closest('.modal_overlay'));
 });
